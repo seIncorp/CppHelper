@@ -2,9 +2,6 @@
 Containg useful things.
 
 With those shortcuts, you can be faster in writing the code and the code is more readable.
+Besides those shortcuts, you will get different functions written in MACRO.
 
-Examples:
-
-1. Using 'o' 
-
-From **std::cout << ...**   to    **o << ...**
+For examples see main.cpp.
