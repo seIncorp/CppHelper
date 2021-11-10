@@ -51,4 +51,33 @@ int main(int argc, char* av[])
 	
 	o << LINEAR_SEARCH(ar, sizeof(ar) / sizeof(ar[1]), 55) << e;
 	/************************************************/
+
+	/******************** 5 *************************/
+	LINKED_LIST* list = NEW_LINKED_LIST();
+
+
+	PREPEND_NODE(list, NEW_NODE(22));
+	PREPEND_NODE(list, NEW_NODE(33));
+	PREPEND_NODE(list, NEW_NODE(55));
+
+	APPEND_NODE(list, NEW_NODE(11));
+
+
+	o << "HEAD " << (*list).head->value << e;
+	o << "TAIL " << (*list).tail->value << e;
+
+	NODE* temp = (*list).head;
+	while (1)
+	{
+		o << temp->value << e;
+
+		if (temp->next != NULL)
+			temp = (NODE*)temp->next;
+		else
+			break;
+	}
+	/************************************************/
+
+
+
 }
