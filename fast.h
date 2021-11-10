@@ -28,3 +28,25 @@
 
 #define BAon     (o << std::boolalpha)
 #define BAoff    (o << std::noboolalpha)
+
+
+/*Algorithms by Paradigm*/
+
+/*Brute Force*/
+
+/*WARNINIG:  build on VS 2019 failed. On Codelite or using g++ work normaly.*/
+#define LINEAR_SEARCH(x, len, v) ({ \ 
+/*
+	arg1: pointer to first element in array
+	arg2: length of array
+	arg3: value for search
+*/
+	int* a = (x); \
+	int c = 0; \
+	int res = 0; \
+	while (c < (len)) \
+	{ \
+		if (*(a + c) == v) {res = c; } c++; \
+	} \
+	res; \
+})
