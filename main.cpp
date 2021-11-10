@@ -46,6 +46,7 @@ int main(int argc, char* av[])
 	/************************************************/
 
 	/******************** 4 *************************/
+	// Macro return index of searched value
 	int ar[]{ 11, 22, 33, 55 };
 	
 	o << LINEAR_SEARCH(ar, sizeof(ar) / sizeof(ar[1]), 55) << e;
