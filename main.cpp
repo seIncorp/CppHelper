@@ -20,4 +20,14 @@ int main(int argc, char* av[])
 	ee;
 	/************************************************/
 
+	/******************** 3 *************************/
+	// Old style
+	std::vector<int> test_1;
+	// New style
+	Vi test_2; // for integers
+	Vd test_3; // for doubles
+	Vl test_4; // for longs
+	Vc test_5; // for characters
+	/************************************************/
+
 }
