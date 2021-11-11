@@ -53,18 +53,19 @@ int main(int argc, char* av[])
 	/************************************************/
 
 	/******************** 5 *************************/
-	LINKED_LIST* list = NEW_LINKED_LIST();
+	LINKED_LIST* test_list = NEW_LINKED_LIST();
+	for (int a = 0; a < 5; a++)
+	{
+		o << arr[a] << e;
 
+		NODE* nn = NEW_NODE(arr[a]);
+		o << "v: " << nn->value << e;
 
-	PREPEND_NODE(list, NEW_NODE(22));
-	PREPEND_NODE(list, NEW_NODE(33));
-	PREPEND_NODE(list, NEW_NODE(55));
+		//APPEND_NODE(test_list,nn);
+		// or
+		PREPEND_NODE(test_list, nn);
+	}
 
-	APPEND_NODE(list, NEW_NODE(11));
-
-
-	o << "HEAD " << (*list).head->value << e;
-	o << "TAIL " << (*list).tail->value << e;
 
 	NODE* temp = (*list).head;
 	while (1)
@@ -78,6 +79,48 @@ int main(int argc, char* av[])
 	}
 	/************************************************/
 
+	/******************** 6 *************************/
+	// From array
 
+	int arr[]{ 5,4,3,2,1 };
 
+	LINKED_LIST* test_list1 = FROM_ARRAY_NODES(arr, sizeof(arr) / sizeof(arr[1]));
+
+	NODE* temp2 = (*test_list1).head;
+	while (1)
+	{
+		o << temp2->value << e;
+
+		if (temp2->next != NULL)
+			temp2 = (NODE*)temp2->next;
+		else
+			break;
+	}
+
+	/************************************************/
+
+	/******************** 7 *************************/
+	// Search for one node
+	NODE* rtd = FIND_NODE(test_list, 3);
+
+	o << "SEARCHED:  " << rtd->value << e;
+
+	/************************************************/
+
+	/******************** 8 *************************/
+	
+	DELETE_NODE(test_list1, 2);
+	// or
+	DELETE_HEAD_NODE(test_list);
+	// or
+	DELETE_TAIL_NODE(test_list);
+
+	/************************************************/
+
+	/******************** 9 *************************/
+
+	// Linkedlist to String
+	string str = TO_STRING_NODES(test_list);
+	o << str << e;
+	/************************************************/
 }
