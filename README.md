@@ -8,5 +8,5 @@ For examples see main.cpp.
 
 
 **WARNING**
-If you want to use those macros, you must not use this style for parameter names: 
+If you want to use those macros, you must not use this style for parameter names outside of macros: 
 > `_xxx_`
