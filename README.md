@@ -4,6 +4,40 @@ Containg useful things.
 With those shortcuts, you can be faster in writing the code and the code is more readable.
 Besides those shortcuts, you will get different functions written in MACRO.
 
+
+### List of functionality:
+- shortcuts for std::cout, cin, cerr, clog, endl
+- shortcut for writing new line --> std::cout << std::endl
+- shortcuts for defining different vectors std::vector<int, double, ...
+- shortcut for defining 2D int vector
+- shortcuts for enable/disable boolalpha
+- LINEAR SEARCH as macro
+- LINKED LIST written in macro:
+    - creating new linked list
+    - creating new node
+    - prepend node
+    - append node
+    - delete node
+    - find node
+    - creating new linked list from array
+    - delete head node
+    - delete tail node
+    - to string linked list
+- BIT MANIPULATION written in macro:
+    - print number in bits
+    - set bit to 1
+    - set bit to 0
+    - check for even number
+    - check if number is positive
+    - multiply number by two
+    - devide number by two
+    - switch sign of the number
+    - multiply two unsigned numbers
+    - count of all 1's in the number
+    - count of all different bits in two numbers
+    - bits length of the number
+
+
 For examples see main.cpp.
 
 
