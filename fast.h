@@ -58,3 +58,7 @@
 /*Linked list*/
 
 #include "linkedlist.h"
+
+/* Bit Manipulation */
+
+#include "bitManipulation.h"
