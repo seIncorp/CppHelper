@@ -55,10 +55,6 @@ public:
 	}
 };
 
-
-
-
-
 #define D_NEW_LINKED_LIST() ({ \
     D_LINKED_LIST *_ll_ = new D_LINKED_LIST(); \
     _ll_; \
@@ -68,11 +64,6 @@ public:
 	D_NODE *_dd_ = new D_NODE( (_x_) ); \
 	_dd_; \
 })
-
-
-
-
-
 
 class D_LINKED_LIST {
 public:
