@@ -12,7 +12,7 @@ Besides those shortcuts, you will get different functions written in MACRO.
 - shortcut for defining 2D int vector
 - shortcuts for enable/disable boolalpha
 - LINEAR SEARCH as macro
-- LINKED LIST written in macro:
+- LINKED LIST written in macro and additional class functions:
     - creating new linked list
     - creating new node
     - prepend node
@@ -36,6 +36,17 @@ Besides those shortcuts, you will get different functions written in MACRO.
     - count of all 1's in the number
     - count of all different bits in two numbers
     - bits length of the number
+- DOUBLY LINKED LIST written in macro and additional class functions:
+    - creating new doubly linked list
+    - creating new node
+    - prepend node
+    - append node
+    - delete node
+    - find node
+    - creating new linked list from array
+    - delete head node
+    - delete tail node
+    - to string linked list
 
 
 For examples see main.cpp.
