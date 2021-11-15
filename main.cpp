@@ -172,8 +172,8 @@ int main(int argc, char* av[])
 	ee;
 
 	// FIND_NODE
-	NODE* searched = class_style_list2->find_node(22);
-	o << "RESULT: " << searched->value << e;
+	NODE* searched2 = class_style_list2->find_node(22);
+	o << "RESULT: " << searched2->value << e;
 	ee;
 
 	//TO_STRING_NODES
