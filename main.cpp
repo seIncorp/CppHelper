@@ -52,76 +52,76 @@ int main(int argc, char* av[])
 	o << LINEAR_SEARCH(ar, sizeof(ar) / sizeof(ar[1]), 55) << e;
 	/************************************************/
 
-	/******************** 5 *************************/
-	LINKED_LIST* test_list = NEW_LINKED_LIST();
-	for (int a = 0; a < 5; a++)
-	{
-		o << arr[a] << e;
-
-		NODE* nn = NEW_NODE(arr[a]);
-		o << "v: " << nn->value << e;
-
-		//APPEND_NODE(test_list,nn);
-		// or
-		PREPEND_NODE(test_list, nn);
-	}
-
-
-	NODE* temp = (*list).head;
-	while (1)
-	{
-		o << temp->value << e;
-
-		if (temp->next != NULL)
-			temp = (NODE*)temp->next;
-		else
-			break;
-	}
-	/************************************************/
-
-	/******************** 6 *************************/
-	// From array
-
-	int arr[]{ 5,4,3,2,1 };
-
-	LINKED_LIST* test_list1 = FROM_ARRAY_NODES(arr, sizeof(arr) / sizeof(arr[1]));
-
-	NODE* temp2 = (*test_list1).head;
-	while (1)
-	{
-		o << temp2->value << e;
-
-		if (temp2->next != NULL)
-			temp2 = (NODE*)temp2->next;
-		else
-			break;
-	}
-
-	/************************************************/
-
-	/******************** 7 *************************/
-	// Search for one node
-	NODE* rtd = FIND_NODE(test_list, 3);
-
-	o << "SEARCHED:  " << rtd->value << e;
-
-	/************************************************/
-
-	/******************** 8 *************************/
+	/******************** LINKED LIST *************************/
 	
-	DELETE_NODE(test_list1, 2);
-	// or
-	DELETE_HEAD_NODE(test_list);
-	// or
-	DELETE_TAIL_NODE(test_list);
+	// MACRO STYLE
+	int arr[3]{ 11,22,33 };
 
-	/************************************************/
+	LINKED_LIST* macro_style_list = NEW_LINKED_LIST();  // creating new linked list
+	NODE* macro_style_node = NEW_NODE(1);               // creating new node    
 
-	/******************** 9 *************************/
+	// PREPEND_NODE
+	PREPEND_NODE(macro_style_list, NEW_NODE(arr[0]));
+	PREPEND_NODE(macro_style_list, NEW_NODE(arr[1]));
+	PREPEND_NODE(macro_style_list, NEW_NODE(arr[2]));
+	PRINT_LIST(macro_style_list);
 
-	// Linkedlist to String
-	string str = TO_STRING_NODES(test_list);
-	o << str << e;
+	ee;
+
+	//DELETE_NODE
+	DELETE_NODE(macro_style_list, 22);
+	PRINT_LIST(macro_style_list);
+	ee;
+
+	//APPEND_NODE
+	APPEND_NODE(macro_style_list, NEW_NODE(arr[0]));
+	APPEND_NODE(macro_style_list, NEW_NODE(arr[1]));
+	APPEND_NODE(macro_style_list, NEW_NODE(arr[2]));
+	PRINT_LIST(macro_style_list);
+
+	ee;
+
+	//TO_ARRAY_NODES
+	int* array_list = TO_ARRAY_NODES(macro_style_list);
+	for (int a = 0; a < macro_style_list->size_of_list; a++)
+		o << array_list[a] << " ";
+	ee;
+
+	// REVERSE_LIST
+	REVERSE_LIST(macro_style_list);
+	PRINT_LIST(macro_style_list);
+	ee;
+
+	//CLEAR_LIST
+	CLEAR_LIST(macro_style_list);
+	PRINT_LIST(macro_style_list);
+	ee;
+
+	//FROM_ARRAY_NODES
+	macro_style_list = FROM_ARRAY_NODES(arr, (sizeof(arr) / sizeof(arr[0])));
+	PRINT_LIST(macro_style_list);
+	ee;
+
+	// FIND_NODE
+	NODE* searched = FIND_NODE(macro_style_list, 22);
+	o << "RESULT: " << searched->value << e;
+	ee;
+
+	//TO_STRING_NODES
+	string res = TO_STRING_NODES(macro_style_list);
+	o << res << e;
+	ee;
+
+	//DELETE_HEAD_NODE
+	DELETE_HEAD_NODE(macro_style_list);
+	PRINT_LIST(macro_style_list);
+	ee;
+
+	//DELETE_TAIL_NODE
+	DELETE_TAIL_NODE(macro_style_list);
+	PRINT_LIST(macro_style_list);
+	ee;
+
 	/************************************************/
 
 
