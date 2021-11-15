@@ -1,8 +1,8 @@
-#pragma once
-
 #include <iostream>
 #include <climits>
 #include <vector>
+#include <Windows.h>
+#include <string>
 
 
 #define E "\n"
@@ -29,35 +29,40 @@
 #define BAon     (o << std::boolalpha)
 #define BAoff    (o << std::noboolalpha)
 
+#define string std::string
+
 
 /*Algorithms by Paradigm*/
 
 /*Brute Force*/
 
-/*WARNINIG:  build on VS 2019 failed. On Codelite or using g++ work normaly.*/
-#define LINEAR_SEARCH(x, len, v) ({ \ 
-/*
-	arg1: pointer to first element in array
-	arg2: length of array
-	arg3: value for search
-
-	return: index of searched value
-*/
-	int* a = (x); \
-	int c = 0; \
-	int res = 0; \
-	while (c < (len)) \
-	{ \
-		if (*(a + c) == v) {res = c; } c++; \
-	} \
-	res; \
+#define LINEAR_SEARCH(_x_, _len_, _v_) ({ \   
+int* a = (_x_); \
+int c = 0; \
+int res = 0; \
+while (c < (_len_)) \
+{ \
+if (*(a + c) == _v_) {/*printf("%d ",*(a+c) );*/ res = c; } c++; \
+} \
+res; \
 })
+
 
 /*Data Structures*/
 
 /*Linked list*/
 
 #include "linkedlist.h"
+
+/* Doubly Linked List */
+#include "doublyLinkedList.h"
+
+/* Queue */
+#include "queue.h"
+
+
+
+
 
 /* Bit Manipulation */
 
