@@ -122,6 +122,77 @@ int main(int argc, char* av[])
 	PRINT_LIST(macro_style_list);
 	ee;
 
+
+	// CLASS FUNCTION STYLE
+	int arr1[3]{ 11,22,33 };
+
+	LINKED_LIST* class_style_list2 = new LINKED_LIST();  // creating new linked list
+	NODE* macro_style_node2 = new NODE(1);               // creating new node    
+
+	// PREPEND_NODE
+	class_style_list2->prepend(new NODE(arr1[0]));
+	class_style_list2->prepend(new NODE(arr1[1]));
+	class_style_list2->prepend(new NODE(arr1[2]));
+	class_style_list2->printList();
+
+	ee;
+
+	//DELETE_NODE
+	class_style_list2->delete_node(22, 0);
+	class_style_list2->printList();
+	ee;
+
+	//APPEND_NODE
+	class_style_list2->append(new NODE(arr1[0]));
+	class_style_list2->append(new NODE(arr1[1]));
+	class_style_list2->append(new NODE(arr1[2]));
+	class_style_list2->printList();
+	ee;
+
+	//TO_ARRAY_NODES
+	int array_list1[class_style_list2->size_of_list]{ 0 };
+	class_style_list2->to_array(array_list1);
+	for (int a = 0; a < class_style_list2->size_of_list; a++)
+		o << array_list1[a] << " ";
+	ee;
+
+	// REVERSE_LIST
+	class_style_list2->reverse();
+	class_style_list2->printList();
+	ee;
+
+	//CLEAR_LIST
+	class_style_list2->clear();
+	class_style_list2->printList();
+	ee;
+
+	//FROM_ARRAY_NODES
+	class_style_list2->from_array(arr1, (sizeof(arr1) / sizeof(arr1[0])));
+	class_style_list2->printList();
+	ee;
+
+	// FIND_NODE
+	NODE* searched = class_style_list2->find_node(22);
+	o << "RESULT: " << searched->value << e;
+	ee;
+
+	//TO_STRING_NODES
+	string res = class_style_list2->to_string();
+	o << res << e;
+	ee;
+
+	//DELETE_HEAD_NODE
+	class_style_list2->delete_head();
+	class_style_list2->printList();
+	ee;
+
+	//DELETE_TAIL_NODE
+	class_style_list2->delete_tail();
+	class_style_list2->printList();
+	ee;
+
+
+
 	/************************************************/
 
 
