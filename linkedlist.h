@@ -61,10 +61,10 @@ public:
 
 	LINKED_LIST()
 	{
-		printList();
 		head = NULL;
 		tail = NULL;
 		size_of_list = 0;
+		printList();
 	}
 
 	printList()
@@ -382,26 +382,28 @@ public:
         (*_ll_).head = (_n_); \
         (*_ll_).head->next = _tt_; \
     } \
+    _ll_->size_of_list++; \
  })
 
 #define APPEND_NODE(_l_,_n_) ({  \
     LINKED_LIST *_lla_ = (_l_); \
     NODE* _nn_ = (_n_); \
     if(_lla_->head == NULL)  \
+    {  \
+        _lla_->head = _nn_;  \
+        _lla_->tail = _nn_;  \
+    }  \
+    else  \
+    {  \
+        NODE *_temp_ = _lla_->head;  \
+        while(_temp_->next != NULL)  \
         {  \
-            _lla_->head = _nn_;  \
-            _lla_->tail = _nn_;  \
+            _temp_ = _temp_->next; \
         }  \
-        else  \
-        {  \
-            NODE *_temp_ = _lla_->head;  \
-            while(_temp_->next != NULL)  \
-            {  \
-                _temp_ = _temp_->next; \
-            }  \
-            _temp_->next = _nn_; \
-            _lla_->tail = _temp_->next; \
-        }  \
+        _temp_->next = _nn_; \
+        _lla_->tail = _temp_->next; \
+    }  \
+    _lla_->size_of_list++; \
  })
 
 #define DELETE_NODE(_l_,_v_) ({ \
@@ -410,6 +412,7 @@ public:
     { \
          NODE *_tt_= (NODE *)(*_ll_).head->next; \
          (*_ll_).head = _tt_; \
+         _ll_->size_of_list--; \
     } \
     else if( (*_ll_).tail->value == (_v_) ) \
     { \
@@ -420,6 +423,7 @@ public:
             { \
                 _tt_->next = NULL; \
                 (*_ll_).tail = _tt_; \
+                _ll_->size_of_list--; \
                 break; \
             }    \
             else \
@@ -437,6 +441,7 @@ public:
                 _tt_->next = (NODE *)((NODE *)_tt_->next)->next; \
                  \
                 _tt2_->next = NULL; \
+                _ll_->size_of_list--; \
                 break; \
             } \
             else \
@@ -479,6 +484,7 @@ public:
     LINKED_LIST *_ll_ = (_l_); \
     NODE *_tt_= (NODE *)(*_ll_).head->next; \
     (*_ll_).head = _tt_; \
+    _ll_->size_of_list--; \
 })
 
 #define DELETE_TAIL_NODE(_l_) ({ \
@@ -495,6 +501,7 @@ public:
         else \
             _tt_ = (NODE *)_tt_->next; \
     } \
+    _ll_->size_of_list--; \
 })
 
 #define TO_STRING_NODES(_l_) ({ \
@@ -521,4 +528,27 @@ public:
         } \
     } \
     _str_; \
+})
+
+#define PRINT_LIST(_l_) ({ \
+    LINKED_LIST *_ll_ = (_l_); \
+    if(_ll_->head != NULL) \
+    { \
+        NODE *_tt_ = (NODE *)(*_ll_).head; \
+        while(1) \
+        { \
+            o << _tt_->value << " "; \
+            ee; \
+            if( _tt_->next == NULL ) \
+            { \
+                break; \
+            } \
+            else \
+                _tt_ = _tt_->next; \
+        } \
+    } \
+    else \
+    { \
+        o << "HEAD: NULL" << e << "TAIL: NULL" << e; \
+    } \
 })
