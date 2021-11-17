@@ -3,22 +3,25 @@ public:
 	int value;
 	NODE* next;
 	int print_flag;
+	string key;     // only for hash table 
 
 	NODE()
 	{
 		value = 0;
 		next = NULL;
 		print_flag = 0;
+		key = "";
 
 		if (print_flag)
 			printNode();
 	}
 
-	NODE(int x)
+	NODE(int x, string k = "")
 	{
 		value = x;
 		next = NULL;
 		print_flag = 0;
+		key = k;
 
 		if (print_flag)
 			printNode();
