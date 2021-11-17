@@ -5,6 +5,11 @@ With those shortcuts, you can be faster in writing the code and the code is more
 Besides those shortcuts, you will get different functions written in MACRO.
 
 
+_**WARNING**_
+If you want to use those macros, you must not use this style for parameter names outside of macros: 
+> `_xxx_`
+
+
 ### List of functionality:
 - shortcuts for std::cout, cin, cerr, clog, endl
 - shortcut for writing new line --> std::cout << std::endl
@@ -55,6 +60,3 @@ Besides those shortcuts, you will get different functions written in MACRO.
 For examples see main.cpp.
 
 
-_**WARNING**_
-If you want to use those macros, you must not use this style for parameter names outside of macros: 
-> `_xxx_`
