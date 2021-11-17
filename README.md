@@ -5,6 +5,12 @@ With those shortcuts, you can be faster in writing the code and the code is more
 Besides those shortcuts, you will get different functions written in MACRO.
 
 
+_**WARNING**_
+If you want to use those macros, you must not use this style for parameter names outside of macros: 
+> `_xxx_`
+
+_**For examples see main.cpp.**_
+
 ### List of functionality:
 - shortcuts for std::cout, cin, cerr, clog, endl
 - shortcut for writing new line --> std::cout << std::endl
@@ -36,7 +42,7 @@ Besides those shortcuts, you will get different functions written in MACRO.
     - count of all 1's in the number
     - count of all different bits in two numbers
     - bits length of the number
-- DOUBLY LINKED LIST written in macro and additional class functions:
+- DOUBLY LINKED LIST written in macro and class functions:
     - creating new doubly linked list
     - creating new node
     - prepend node
@@ -47,11 +53,11 @@ Besides those shortcuts, you will get different functions written in MACRO.
     - delete head node
     - delete tail node
     - to string linked list
+- HEAP (NOT FINISHED)
+- QUEUE written in macro and class functions
+- STACK written in macro and class functions
 
 
-For examples see main.cpp.
 
 
-_**WARNING**_
-If you want to use those macros, you must not use this style for parameter names outside of macros: 
-> `_xxx_`
+
