@@ -36,7 +36,7 @@ Besides those shortcuts, you will get different functions written in MACRO.
     - count of all 1's in the number
     - count of all different bits in two numbers
     - bits length of the number
-- DOUBLY LINKED LIST written in macro and additional class functions:
+- DOUBLY LINKED LIST written in macro and class functions:
     - creating new doubly linked list
     - creating new node
     - prepend node
@@ -47,6 +47,9 @@ Besides those shortcuts, you will get different functions written in MACRO.
     - delete head node
     - delete tail node
     - to string linked list
+- HEAP (NOT FINISHED)
+- QUEUE written in macro and class functions
+- STACK written in macro and class functions
 
 
 For examples see main.cpp.
