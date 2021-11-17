@@ -9,6 +9,7 @@ _**WARNING**_
 If you want to use those macros, you must not use this style for parameter names outside of macros: 
 > `_xxx_`
 
+_**For examples see main.cpp.**_
 
 ### List of functionality:
 - shortcuts for std::cout, cin, cerr, clog, endl
@@ -57,6 +58,6 @@ If you want to use those macros, you must not use this style for parameter names
 - STACK written in macro and class functions
 
 
-For examples see main.cpp.
+
 
 
