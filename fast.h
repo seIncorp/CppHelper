@@ -3,6 +3,8 @@
 #include <vector>
 #include <Windows.h>
 #include <string>
+#include <math.h>
+#include <functional>
 
 
 #define E "\n"
@@ -60,9 +62,11 @@ res; \
 /* Queue */
 #include "queue.h"
 
+/* Stack */
+#include "stack.h"
 
-
-
+/* Heap */
+#include "heap.h"
 
 /* Bit Manipulation */
 

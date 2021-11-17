@@ -48,12 +48,12 @@ int main(int argc, char* av[])
 	/******************** 4 *************************/
 	// Macro return index of searched value
 	int ar[]{ 11, 22, 33, 55 };
-	
+
 	o << LINEAR_SEARCH(ar, sizeof(ar) / sizeof(ar[1]), 55) << e;
 	/************************************************/
 
 	/******************** LINKED LIST *************************/
-	
+
 	// MACRO STYLE
 	int arr[3]{ 11,22,33 };
 
@@ -177,8 +177,8 @@ int main(int argc, char* av[])
 	ee;
 
 	//TO_STRING_NODES
-	string res = class_style_list2->to_string();
-	o << res << e;
+	string res2 = class_style_list2->to_string();
+	o << res2 << e;
 	ee;
 
 	//DELETE_HEAD_NODE
@@ -194,6 +194,254 @@ int main(int argc, char* av[])
 
 
 	/************************************************/
+
+	/************************ DOUBLY LINKED LIST *****************************/
+	// CLASS FUNCTION STYLE
+	int arr2[3]{ 11,22,33 };
+
+	// MACRO STYLE
+
+	D_LINKED_LIST* macro_style_doubly_list1 = D_NEW_LINKED_LIST();
+
+	//    D_PREPEND_NODE
+	D_PREPEND_NODE(macro_style_doubly_list1, D_NEW_NODE(arr2[0]));
+	D_PREPEND_NODE(macro_style_doubly_list1, D_NEW_NODE(arr2[1]));
+	D_PREPEND_NODE(macro_style_doubly_list1, D_NEW_NODE(arr2[2]));
+	D_PRINT_LIST(macro_style_doubly_list1);
+	ee;
+
+	//    D_DELETE_NODE
+	D_DELETE_NODE(macro_style_doubly_list1, 11, 0);
+	D_DELETE_NODE(macro_style_doubly_list1, 33, 0);
+	D_DELETE_NODE(macro_style_doubly_list1, 22, 0);
+	D_PRINT_LIST(macro_style_doubly_list1);
+	ee;
+
+	//    D_APPEND_NODE
+	D_APPEND_NODE(macro_style_doubly_list1, D_NEW_NODE(arr2[0]));
+	D_APPEND_NODE(macro_style_doubly_list1, D_NEW_NODE(arr2[1]));
+	D_APPEND_NODE(macro_style_doubly_list1, D_NEW_NODE(arr2[2]));
+	D_PRINT_LIST(macro_style_doubly_list1);
+	ee;
+
+	//    D_TO_ARRAY_NODES
+	int* array_list2 = D_TO_ARRAY_NODES(macro_style_doubly_list1);
+	for (int a = 0; a < macro_style_doubly_list1->size_of_list; a++)
+		o << array_list2[a] << " ";
+	ee;
+
+	//    D_REVERSE_LIST
+	D_REVERSE_LIST(macro_style_doubly_list1);
+	D_PRINT_LIST(macro_style_doubly_list1);
+	ee;
+
+	//    D_CLEAR_LIST
+	D_CLEAR_LIST(macro_style_doubly_list1);
+	D_PRINT_LIST(macro_style_doubly_list1);
+	ee;
+
+	//    D_FROM_ARRAY_NODES
+	macro_style_doubly_list1 = D_FROM_ARRAY_NODES(arr2, 3);
+	D_PRINT_LIST(macro_style_doubly_list1);
+	ee;
+
+	//    D_FIND_NODE
+	D_NODE* searched4 = D_FIND_NODE(macro_style_doubly_list1, 11);
+	o << "RESULT: " << searched4->value << e;
+	ee;
+
+	//    D_TO_STRING_NODES
+	string lis = D_TO_STRING_NODES(macro_style_doubly_list1);
+	o << lis << e;
+	ee;
+
+	//    D_DELETE_HEAD_NODE
+	D_DELETE_HEAD_NODE(macro_style_doubly_list1);
+	D_PRINT_LIST(macro_style_doubly_list1);
+	ee;
+
+	//    D_DELETE_TAIL_NODE
+	D_DELETE_TAIL_NODE(macro_style_doubly_list1);
+	D_PRINT_LIST(macro_style_doubly_list1);
+	ee;
+
+
+
+
+
+
+
+
+	// CLASS FUNCTION STYLE
+
+	D_LINKED_LIST* class_style_doubly_list2 = new D_LINKED_LIST();
+
+	//    prepend
+	class_style_doubly_list2->prepend(new D_NODE(arr2[0]));
+	class_style_doubly_list2->prepend(new D_NODE(arr2[1]));
+	class_style_doubly_list2->prepend(new D_NODE(arr2[2]));
+	class_style_doubly_list2->printList();
+	ee;
+
+	//    delete_node
+	class_style_doubly_list2->delete_node(22, 0);
+	class_style_doubly_list2->printList();
+	ee;
+
+	//    append
+	class_style_doubly_list2->append(new D_NODE(arr2[0]));
+	class_style_doubly_list2->append(new D_NODE(arr2[1]));
+	class_style_doubly_list2->append(new D_NODE(arr2[2]));
+	class_style_doubly_list2->printList();
+	ee;
+
+	//    to_array
+	int array_list3[class_style_doubly_list2->size_of_list]{ 0 };
+	class_style_doubly_list2->to_array(array_list3);
+	for (int a = 0; a < class_style_doubly_list2->size_of_list; a++)
+		o << array_list3[a] << " ";
+	ee;
+
+	//    reverse
+	class_style_doubly_list2->reverse();
+	class_style_doubly_list2->printList();
+	ee;
+
+	//    clear
+	class_style_doubly_list2->clear();
+	class_style_doubly_list2->printList();
+	ee;
+
+	//    from_array
+	class_style_doubly_list2->from_array(arr2, (sizeof(arr2) / sizeof(arr2[0])));
+	class_style_doubly_list2->printList();
+	ee;
+
+	//    find_node
+	D_NODE* searched3 = class_style_doubly_list2->find_node(22);
+	o << "RESULT: " << searched3->value << e;
+	ee;
+
+	//    to_string
+	string res3 = class_style_doubly_list2->to_string();
+	o << res3 << e;
+	ee;
+
+	//    delete_head
+	class_style_doubly_list2->delete_head();
+	class_style_doubly_list2->printList();
+	ee;
+
+	//    delete_tail
+	class_style_doubly_list2->delete_tail();
+	class_style_doubly_list2->printList();
+	ee;
+
+	/************************************************/
+
+
+
+	/************************ QUEUE *****************************/
+	 //MACRO version
+	QUEUE* q2 = NEW_QUEUE();
+	ee;
+	o << "IS EMPTY: " << (IS_EMPTY_QUEUE(q2) == 1 ? "TRUE" : "FALSE") << e;
+	ee;
+	o << "PEEK: " << PEEK_QUEUE(q2) << e;
+	ee;
+	ENQUEUE_QUEUE(q2, 1);
+	ENQUEUE_QUEUE(q2, 2);
+	o << "PEEK: " << PEEK_QUEUE(q2) << e;
+	ee;
+	o << "DEQUEUE: " << DEQUEUE_QUEUE(q2) << e;
+	ee;
+	o << "PEEK: " << PEEK_QUEUE(q2) << e;
+	ee;
+	ENQUEUE_QUEUE(q2, 3);
+	o << TO_STRING_QUEUE(q2) << e;
+	ee;
+
+
+	// class version
+	QUEUE* q = new QUEUE();
+	ee;
+	o << "IS EMPTY: " << (q->isEmpty() == 1 ? "TRUE" : "FALSE") << e;
+	ee;
+	o << "PEEK: " << q->peek() << e;
+	ee;
+
+	q->enqueue(1);
+	q->enqueue(2);
+	o << "PEEK: " << q->peek() << e;
+	ee;
+
+	o << "DEQUEUE: " << q->dequeue() << e;
+	ee;
+	o << "PEEK: " << q->peek() << e;
+	ee;
+	q->enqueue(3);
+
+	o << q->toString() << e;
+	ee;
+
+	/************************************************/
+
+
+	/************************ STACK *****************************/
+	// MACRO style
+	STACK* stack2 = NEW_STACK();
+	ee;
+	o << "IS EMPTY: " << (IS_EMPTY_STACK(stack2) == TRUE ? "TRUE" : "FALSE") << e;
+	ee;
+	o << "PEEK: " << PEEK_STACK(stack2) << e;
+	ee;
+	PUSH_STACK(stack2, 1);
+	PUSH_STACK(stack2, 2);
+	PUSH_STACK(stack2, 3);
+	o << "PEEK: " << PEEK_STACK(stack2) << e;
+	ee;
+	o << "POP: " << POP_STACK(stack2) << e;
+	ee;
+	o << "PEEK: " << PEEK_STACK(stack2) << e;
+	ee;
+	PUSH_STACK(stack2, 4);
+	int* arr77 = TO_ARRAY_STACK(stack2);
+	for (int a = 0; a < stack2->stack->size_of_list; a++)
+		o << arr77[a] << " ";
+	ee;
+	o << TO_STRING_STACK(stack2) << e;
+	ee;
+
+
+	// class style
+
+	STACK* stack = new STACK();
+	ee;
+	o << "IS EMPTY: " << (stack->isEmpty() == TRUE ? "TRUE" : "FALSE") << e;
+	ee;
+	stack->push(1);
+	stack->push(2);
+	o << "PEEK: " << stack->peek() << e;
+	ee;
+	o << "POP: " << stack->pop() << e;
+	ee;
+	o << "PEEK: " << stack->peek() << e;
+	ee;
+	stack->push(3);
+	stack->push(4);
+	stack->push(5);
+	int ar55[stack->stack->size_of_list]{ 0 };
+	stack->toArray(ar55);
+	for (int a = 0; a < stack->stack->size_of_list; a++)
+		o << ar55[a] << " ";
+	ee;
+	o << "PEEK: " << stack->peek() << e;
+	ee;
+	o << stack->toString() << e;
+	ee;
+
+	/************************************************/
+
 
 
 	/******************** BIT MANIPULATION *************************/
@@ -238,4 +486,7 @@ int main(int argc, char* av[])
 
 
 	/************************************************/
+
+
+	return 0;
 }

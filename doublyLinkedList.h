@@ -1,4 +1,4 @@
-class D_NODE {
+ï»¿class D_NODE {
 public:
 	int value;
 	D_NODE* next;
@@ -55,6 +55,10 @@ public:
 	}
 };
 
+
+
+
+
 #define D_NEW_LINKED_LIST() ({ \
     D_LINKED_LIST *_ll_ = new D_LINKED_LIST(); \
     _ll_; \
@@ -65,6 +69,11 @@ public:
 	_dd_; \
 })
 
+
+
+
+
+
 class D_LINKED_LIST {
 public:
 	D_NODE* head;
@@ -73,10 +82,10 @@ public:
 
 	D_LINKED_LIST()
 	{
-		printList();
 		head = NULL;
 		tail = NULL;
 		size_of_list = 0;
+		printList();
 	}
 
 	~D_LINKED_LIST();
@@ -332,11 +341,56 @@ public:
 	_ll1_->size_of_list++; \
 })
 
-#define D_DELETE_NODE(_l_,_v_) ({})
+#define D_DELETE_NODE(_l_,_v_,_of_) ({ \
+    D_LINKED_LIST *_ll_ = (_l_); \
+    int onlyFirst = (_of_); \
+    if( (*_ll_).head->value == (_v_) ) \
+    { \
+		 if((*_ll_).head->next == NULL) \
+		 { \
+			 (*_ll_).head = NULL; \
+			 (*_ll_).tail = NULL; \
+			 _ll_->size_of_list = 0; \
+		 } \
+		 else if((*_ll_).head->next != NULL) \
+		 { \
+			 (*_ll_).head = (*_ll_).head->next; \
+			 (*_ll_).head->previous = NULL; \
+			 _ll_->size_of_list--; \
+		 } \
+    } \
+    else if( (*_ll_).tail->value == (_v_) ) \
+    { \
+		_ll_->tail = _ll_->tail->previous; \
+        _ll_->tail->next = NULL; \
+        _ll_->size_of_list--; \
+    } \
+    else \
+    { \
+        D_NODE *_tt_ = _ll_->head; \
+        while(1) \
+        { \
+            if(_tt_->value ==  (_v_) ) \
+            { \
+				if(onlyFirst == 0) \
+                { \
+                    _tt_->next->previous = _tt_->previous; \
+                    _tt_->previous->next = _tt_->next; \
+                     \
+                    _ll_->size_of_list--; \
+                     \
+                    onlyFirst = 1; \
+                } \
+            } \
+             \
+            if(_tt_->next != NULL) \
+                _tt_ = _tt_->next; \
+            else \
+                break; \
+        } \
+    } \
+})
 
-#define D_FIND_NODE(_l_,_v_) ({})
-
-// TODO: dodaj še za drugo smer
 #define D_FROM_ARRAY_NODES(_a_,_len_) ({ \
 	D_LINKED_LIST *_ll1_ = D_NEW_LINKED_LIST(); \
 	int *_arr_ = (_a_); \
@@ -401,6 +455,124 @@ public:
 	_aa_; \
 })
 
-#define D_TO_STRING_NODES(_l_) ({})
+#define D_PRINT_LIST(_l_) ({ \
+    D_LINKED_LIST *_ll_ = (_l_); \
+    if(_ll_->head != NULL) \
+    { \
+        D_NODE *_tt_ = (*_ll_).head; \
+        while(1) \
+        { \
+            o << _tt_->value << " "; \
+            ee; \
+            if( _tt_->next == NULL ) \
+            { \
+                break; \
+            } \
+            else \
+                _tt_ = _tt_->next; \
+        } \
+    } \
+    else \
+    { \
+        o << "HEAD: NULL" << e << "TAIL: NULL" << e; \
+    } \
+})
 
-#define D_REVERSE_LIST(_l_) ({})
+#define D_CLEAR_LIST(_l_) ({  \
+    D_LINKED_LIST *_ll_ = (_l_); \
+	_ll_->head = NULL; \
+	_ll_->tail = NULL; \
+	_ll_->size_of_list = 0; \
+})
+
+#define D_TO_STRING_NODES(_l_) ({ \
+    string _str_ = ""; \
+    D_LINKED_LIST *_ll_ = (_l_); \
+    D_NODE *_tt_ = (*_ll_).head; \
+    int _count_ = 0; \
+    while(1) \
+    { \
+        if(_tt_->next == NULL) \
+        { \
+            if(_count_ > 0) \
+                _str_ += ", "; \
+            _str_ += std::to_string(_tt_->value); \
+            break; \
+        } \
+        else \
+        { \
+            if(_count_ > 0) \
+                _str_ += ", "; \
+            _str_ += std::to_string(_tt_->value); \
+            _tt_ = _tt_->next; \
+            _count_++; \
+        } \
+    } \
+    _str_; \
+})
+
+#define D_REVERSE_LIST(_l_) ({ \
+    D_LINKED_LIST *_ll1_ = (_l_); \
+	 \
+	int _len1_ = _ll1_->size_of_list; \
+	int _aa_[_ll1_->size_of_list] {0}; \
+	\
+	D_NODE *_temp1_ = _ll1_->head; \
+	int _ii_ =0; \
+	while(1) \
+	{ \
+		_aa_[_ii_] = _temp1_->value; \
+ \
+		if(_temp1_->next != NULL) \
+			_temp1_ = _temp1_->next; \
+		else \
+		{ \
+			_temp1_ = NULL; \
+			break; \
+		} \
+		 \
+		_ii_++; \
+	} \
+	 \
+	 int _xx_ = 0; \
+	 \
+	_ll1_->head = NULL; \
+	_ll1_->tail = NULL; \
+	_ll1_->size_of_list = 0; \
+	 \
+	 while( _xx_ < _len1_ ) \
+	{ \
+		D_NODE* _nn_ = D_NEW_NODE(_aa_[_xx_]); \
+		if(_ll1_->head != NULL) \
+		{ \
+			D_NODE *_tt_ = _ll1_->head; \
+			_ll1_->head = _nn_; \
+			_ll1_->head->next = _tt_; \
+			_tt_->previous = _ll1_->head; \
+		} \
+		else \
+		{ \
+			_ll1_->head = _nn_; \
+			_ll1_->tail = _nn_; \
+		} \
+		 \
+		_ll1_->size_of_list++; \
+		_xx_++; \
+		\
+	} \
+})
+
+#define D_FIND_NODE(_l_,_v_) ({ \
+    D_LINKED_LIST *_ll_ = (_l_); \
+    D_NODE *_tt_=(*_ll_).head; \
+    while(1) \
+    { \
+        if( _tt_->value == (_v_) ) \
+        { \
+            break; \
+        } \
+        else \
+            _tt_ = _tt_->next; \
+    } \
+    _tt_; \
+})
