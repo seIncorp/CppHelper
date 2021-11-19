@@ -9,7 +9,7 @@ _**WARNING**_
 If you want to use those macros, you must not use this style for parameter names outside of macros: 
 > `_xxx_`
 
-_**For examples see main.cpp.**_
+_**For examples see Examples.cpp.**_
 
 ### List of functionality:
 - shortcuts for std::cout, cin, cerr, clog, endl
