@@ -67,7 +67,7 @@ public:
 		head = NULL;
 		tail = NULL;
 		size_of_list = 0;
-		printList();
+		//printList();
 	}
 
 	printList()
@@ -136,6 +136,47 @@ public:
 		size_of_list++;
 	}
 
+	// Because it is not possible overload fuction with return type
+	int delete_node_v2(int value, int onlyFirst)
+	{
+		int ret_value = 0;
+		if (head != NULL)
+		{
+			if (head->value == value)
+				ret_value = delete_head_v2();
+			else if (tail->value == value)
+				ret_value = delete_tail_v2();
+			else
+			{
+				if (onlyFirst == 0)
+				{
+					NODE* temp1 = head;
+
+					while (1)
+					{
+						if (temp1->next->value == value)
+						{
+							ret_value = temp1->next->value;
+
+							temp1->next = temp1->next->next;
+							size_of_list--;
+
+							onlyFirst = 1;
+							break;
+						}
+
+						if (temp1->next != NULL)
+							temp1 = temp1->next;
+						else
+							break;
+					}
+				}
+			}
+		}
+
+		return ret_value;
+	}
+
 	delete_node(int value, int onlyFirst)
 	{
 		if (head != NULL)
@@ -200,10 +241,45 @@ public:
 			append(NEW_NODE(arr[II]));
 	}
 
+	// Because it is not possible overload fuction with return type
+	int delete_head_v2()
+	{
+		int ret = 0;
+		ret = head->value;
+		head = head->next;
+		size_of_list--;
+		return ret;
+	}
+
 	delete_head()
 	{
 		head = head->next;
 		size_of_list--;
+	}
+
+	// Because it is not possible overload fuction with return type
+	int delete_tail_v2()
+	{
+		int ret = 0;
+		NODE* temp1 = head;
+
+		while (1)
+		{
+			if (temp1->next->next == NULL)
+			{
+				ret = temp1->next->value;
+				temp1->next = NULL;
+				tail = temp1;
+
+				break;
+			}
+			else
+				temp1 = temp1->next;
+		}
+
+		size_of_list--;
+
+		return ret;
 	}
 
 	delete_tail()

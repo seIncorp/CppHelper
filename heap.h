@@ -84,7 +84,7 @@ public:
 
 		int item = heapContainer[0];
 
-		
+		// Move the last element from the end to the head.
 		heapContainer[0] = heapContainer.back();
 		heapContainer.pop_back();
 		heapifyDown();
@@ -94,18 +94,42 @@ public:
 
 	add(int item)
 	{
-
+		heapContainer.push_back(item);
+		heapifyUp();
 	}
 
 	remove(int item)
 	{
-		
+		// Find number of items to remove.
+		int numberOfItemsToRemove = comparatorCount(item);
+
+		for (int iteration = 0; iteration < numberOfItemsToRemove; iteration++)
+		{
+			int* arr;
+			int indexToRemove = find(item, arr);
+
+
+
+
+		}
+
+
+
+
 
 	}
 
 	find(int item, int arr[])
 	{
-
+		//		const foundItemIndices = [];
+		//		
+		//		for (let itemIndex = 0; itemIndex < this.heapContainer.length; itemIndex += 1) {
+		//		  if (comparator.equal(item, this.heapContainer[itemIndex])) {
+		//			foundItemIndices.push(itemIndex);
+		//		  }
+		//		}
+		//
+		//		return foundItemIndices;
 		return 1;
 	}
 

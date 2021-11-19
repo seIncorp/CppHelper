@@ -391,6 +391,7 @@ public:
     } \
 })
 
+// TODO: dodaj še za drugo smer
 #define D_FROM_ARRAY_NODES(_a_,_len_) ({ \
 	D_LINKED_LIST *_ll1_ = D_NEW_LINKED_LIST(); \
 	int *_arr_ = (_a_); \
@@ -485,6 +486,7 @@ public:
 	_ll_->size_of_list = 0; \
 })
 
+// TODO: dodaj za rpeverjanje če ni null list
 #define D_TO_STRING_NODES(_l_) ({ \
     string _str_ = ""; \
     D_LINKED_LIST *_ll_ = (_l_); \
