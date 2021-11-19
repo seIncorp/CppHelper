@@ -1,3 +1,6 @@
+#ifndef FAST_H
+#define FAST_H
+
 #include <iostream>
 #include <climits>
 #include <vector>
@@ -155,3 +158,10 @@ _res_; \
 /* Bit Manipulation */
 
 #include "bitManipulation.h"
+
+
+#include "Examples.h"
+
+
+
+#endif

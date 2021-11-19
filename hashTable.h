@@ -173,7 +173,6 @@ public:
 
     std::vector<KEYS> getKeys()
     {
-
         return keys;
     }
 
@@ -261,7 +260,6 @@ public:
     int _res_ = 0; \
     for(auto _c_: _ss_) \
     { \
-       o << _c_ ; \
         _res_ += _a_ + int(_c_); \
         _a_++; \
     } \
@@ -430,9 +428,50 @@ public:
 		temp_value; \
 })
 
-#define GET_VALUES_HASH_TABLE() ({})
-#define GET_KEYS_HASH_TABLE() ({})
-#define HAS_HASH_TABLE() ({})
+#define GET_VALUES_HASH_TABLE(_ht_) ({ \
+    HASH_TABLE *_hh_ = (_ht_); \
+    _hh_->all_size = 0; \
+    for(int a = 0; a < _hh_->buckets.size(); a++ ) \
+        if( _hh_->buckets[a]->size_of_list > 0  ) \
+            _hh_->all_size += _hh_->buckets[a]->size_of_list; \
+     \
+    int* values = new int[_hh_->all_size]; \
+    int count = 0; \
+    for(int a = 0; a < _hh_->buckets.size(); a++ ) \
+    { \
+        if( _hh_->buckets[a]->size_of_list > 0  ) \
+        { \
+            NODE *temp = _hh_->buckets[a]->head; \
+            while(1) \
+            { \
+                values[count] = temp->value; \
+                count++; \
+                 \
+                if(temp->next == NULL) \
+                    break; \
+                else \
+                    temp = temp->next; \
+            } \
+        } \
+    } \
+    values; \
+})
+
+#define GET_KEYS_HASH_TABLE(_ht_) ({ \
+    HASH_TABLE *_hh_ = (_ht_); \
+    _hh_->keys; \
+})
+
+#define HAS_HASH_TABLE(_ht_,_k_) ({ \
+    HASH_TABLE *_hh_ = (_ht_); \
+    bool res = FALSE; \
+    for(int a = 0; a < _hh_->keys.size(); a++ ) \
+    { \
+        if(_hh_->keys[a].key == _k_ ) \
+            res = TRUE; \
+    } \
+	res; \
+})
 
 
 
