@@ -18,6 +18,10 @@ _**For examples see main.cpp.**_
 - shortcut for defining 2D int vector
 - shortcuts for enable/disable boolalpha
 - LINEAR SEARCH as macro
+- FACTORIAL (Math) as macro
+- FIBONACCI (return array of all steps) as macro
+- FIBONACCI Nth (return only the last step) as macro
+- FIBONACCIClosedForm as macro
 - LINKED LIST written in macro and additional class functions:
     - creating new linked list
     - creating new node
@@ -56,6 +60,7 @@ _**For examples see main.cpp.**_
 - HEAP (NOT FINISHED)
 - QUEUE written in macro and class functions
 - STACK written in macro and class functions
+- HASH TABLE written in macro and class functions
 
 
 
