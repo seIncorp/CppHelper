@@ -96,6 +96,7 @@ public:
 	{
 		heapContainer.push_back(item);
 		heapifyUp();
+		
 	}
 
 	remove(int item)

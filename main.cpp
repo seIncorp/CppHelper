@@ -2,7 +2,8 @@
 
 int main(int argc, char* av[])
 {
-	/* EXAMPLES */
+    /* EXAMPLES */
+    math_examples();
 
     factorial_examples();
 

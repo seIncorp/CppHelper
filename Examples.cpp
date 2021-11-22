@@ -577,5 +577,61 @@ void hash_table_examples()
 	ee;
 }
 
+void math_examples()
+{
+	Vi ttttt = PRIME_FACTORS(147);
+	for (int a = 0; a < ttttt.size(); a++)
+		o << ttttt.at(a) << " ";
+	ee;
+	o << HARDYRAMANUJAN_MACRO(147) << e;
+
+	ee;
+
+	o << "2: " << (PRIMALITY_TEST_v1(2) == 1 ? "true" : "false") << e;
+	o << "3: " << (PRIMALITY_TEST_v1(3) == 1 ? "true" : "false") << e;
+	o << "4: " << (PRIMALITY_TEST_v1(4) == 1 ? "true" : "false") << e;
+	o << "5: " << (PRIMALITY_TEST_v1(5) == 1 ? "true" : "false") << e;
+	o << "6: " << (PRIMALITY_TEST_v1(6) == 1 ? "true" : "false") << e;
+	o << "7: " << (PRIMALITY_TEST_v1(7) == 1 ? "true" : "false") << e;
+	o << "8: " << (PRIMALITY_TEST_v1(8) == 1 ? "true" : "false") << e;
+	o << "9: " << (PRIMALITY_TEST_v1(9) == 1 ? "true" : "false") << e;
+	o << "10: " << (PRIMALITY_TEST_v1(10) == 1 ? "true" : "false") << e;
+
+	ee;
+
+	o << EUCLIDEANALGORITHMITERATIVE(1071, 462) << e;
+
+	ee;
+	o << LEASTCOMMONMULTIPLE(3, 5) << e;
+
+
+	ee;
+	Vi tttttt = SIEVE_OF_ERATOSTHENES(30);
+	for (int a = 0; a < tttttt.size(); a++)
+		o << tttttt.at(a) << " ";
+	ee;
+
+
+
+	o << (IS_POWER_OF_TWO(10) == 1 ? "true" : "false") << e;
+	o << (IS_POWER_OF_TWO_BITWISE(10) == 1 ? "true" : "false") << e;
+
+	ee;
+
+
+	int test[5][5];
+	PASCAL_TRIANGLE(5, test);
+	ee;
+	for (int a = 0; a < 5; a++)
+	{
+		for (int aa = 0; aa < 5; aa++)
+		{
+			test[a][aa] != 0 ? (o << test[a][aa] << " ") : (o << " ");
+
+		}
+		ee;
+	}
+	ee;
+}
 
 

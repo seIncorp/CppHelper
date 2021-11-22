@@ -19,5 +19,5 @@ void factorial_examples();
 
 void hash_table_examples();
 
-
+void math_examples();
 

@@ -10,6 +10,7 @@
 #include <functional>
 
 
+
 #define E "\n"
 #define T "\t"
 
@@ -59,77 +60,8 @@ _res_; \
 
 /*Algorithms*/
 
-/*Factorial*/
-// TODO: recursive with function
-#define FACTORIAL(_n_) ({ \
-	int _res_ = 1; \
-	int _i_ = 2; \
-	while(_i_ <= (_n_) ) \
-	{ \
-		_res_ *= _i_; \
-		_i_++; \
-	} \
-	_res_; \
-})
-
-/*fibonacci*/
-// return whole array of every step
-#define FIBONACCI(_n_) ({ \
-	std::vector<int> _a_ ; \
-	int _c_ = 1; \
-	int _p_ = 0; \
-	 \
-	if(_n_ == 1)  \
-	{ \
-	 _a_.push_back(1); \
-	} \
-	else \
-	{ \
-		int _i_ = _n_ - 1; \
-		_a_.push_back(1); \
-		while (_i_) \
-		{ \
-			_c_ += _p_; \
-			_p_ = _c_ - _p_; \
-			_a_.push_back(_c_); \
-			_i_--; \
-		} \
-	} \
-	_a_; \
-})
-
-// return only the last step
-#define FIBONACCINth(_n_) ({ \
-	int _c_ = 1; \
-	int _p_ = 0; \
-	if (_n_ == 1)  \
-	{ \
-		_c_ = 1; \
-	} \
-	else \
-	{ \
-		int _i_ = _n_ - 1; \
-		while (_i_)  \
-		{ \
-			_c_ += _p_; \
-			_p_ = _c_ - _p_; \
-			_i_--; \
-		} \	
-	} \
-	_c_; \
-})
-
-#define FIBONACCIClosedForm(_n_) ({ \
-	int topMaxValidPosition = 70; \
-	int res = 0; \
-	if (_n_ < 1 || _n_ > topMaxValidPosition) { \
-		er << "Can't handle position smaller than 1 or greater than ${topMaxValidPosition}"; \
-	} \
-	double sqrt5 = sqrt(5); \
-	double phi = (1 + sqrt5) / 2; \
-	res = floor(( pow(phi, _n_) ) / sqrt5 + 0.5); \
-	res; \
-})
+/* Math */
+#include "macroMath.h"
 
 
 
