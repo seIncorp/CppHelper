@@ -11,28 +11,22 @@ If you want to use those macros, you must not use this style for parameter names
 
 _**For examples see Examples.cpp.**_
 
-### List of functionality:
-- shortcuts for std::cout, cin, cerr, clog, endl
-- shortcut for writing new line --> std::cout << std::endl
-- shortcuts for defining different vectors std::vector<int, double, ...
-- shortcut for defining 2D int vector
-- shortcuts for enable/disable boolalpha
-- LINEAR SEARCH as macro
+## List of functionality:
+### Math:
 - FACTORIAL (Math) as macro
 - FIBONACCI (return array of all steps) as macro
 - FIBONACCI Nth (return only the last step) as macro
 - FIBONACCIClosedForm as macro
-- LINKED LIST written in macro and additional class functions:
-    - creating new linked list
-    - creating new node
-    - prepend node
-    - append node
-    - delete node
-    - find node
-    - creating new linked list from array
-    - delete head node
-    - delete tail node
-    - to string linked list
+- PRIME FACTORS as macro
+- HARDYRAMANUJAN MACRO as macro
+- PRIMALITY TEST as macro
+- EUCLIDEAN ALGORITHM ITERATIVE as macro
+- LEAST COMMON MULTIPLE as macro
+- SIEVE OF ERATOSTHENES as macro
+- IS POWER OF TWO BITWISE as macro
+- IS POWER OF TWO as macro
+- PASCAL TRIANGLE as macro
+- COMPLEX NUMBER as macro (NOT FINISHED)
 - BIT MANIPULATION written in macro:
     - print number in bits
     - set bit to 1
@@ -46,6 +40,26 @@ _**For examples see Examples.cpp.**_
     - count of all 1's in the number
     - count of all different bits in two numbers
     - bits length of the number
+
+### Shortcuts:
+- shortcuts for std::cout, cin, cerr, clog, endl, string
+- shortcut for writing new line --> std::cout << std::endl
+- shortcuts for defining different vectors std::vector<int, double, ...
+- shortcut for defining 2D int vector
+- shortcuts for enable/disable boolalpha
+
+### Data Structures
+- LINKED LIST written in macro and additional class functions:
+    - creating new linked list
+    - creating new node
+    - prepend node
+    - append node
+    - delete node
+    - find node
+    - creating new linked list from array
+    - delete head node
+    - delete tail node
+    - to string linked list
 - DOUBLY LINKED LIST written in macro and class functions:
     - creating new doubly linked list
     - creating new node
@@ -61,6 +75,12 @@ _**For examples see Examples.cpp.**_
 - QUEUE written in macro and class functions
 - STACK written in macro and class functions
 - HASH TABLE written in macro and class functions
+
+### Searches:
+- LINEAR SEARCH as macro
+
+
+
 
 
 
