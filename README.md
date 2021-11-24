@@ -26,7 +26,12 @@ _**For examples see Examples.cpp.**_
 - IS POWER OF TWO BITWISE as macro
 - IS POWER OF TWO as macro
 - PASCAL TRIANGLE as macro
-- COMPLEX NUMBER as macro (NOT FINISHED)
+- DEGREE_TO_RADIAN as macro
+- RADIAN_TO_DEGREE as macro
+- FAST_POWERING as macro
+- HORNER_METHOD as macro
+- CLASSIC_POLYNOME as macro
+- COMPLEX NUMBER as macro
 - BIT MANIPULATION written in macro:
     - print number in bits
     - set bit to 1
@@ -79,8 +84,8 @@ _**For examples see Examples.cpp.**_
 ### Searches:
 - LINEAR SEARCH as macro
 
-
-
+### Sets:
+- COMBINATIONS (with and without repetitions) as recursion
 
 
 
