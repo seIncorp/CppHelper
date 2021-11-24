@@ -8,7 +8,7 @@
 #include <string>
 #include <math.h>
 #include <functional>
-
+#include <cmath>
 
 
 #define E "\n"
@@ -63,8 +63,8 @@ _res_; \
 /* Math */
 #include "macroMath.h"
 
-
-
+/* Sets */
+#include "macroSets.h"
 
 
 

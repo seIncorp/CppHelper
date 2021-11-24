@@ -1,12 +1,14 @@
 
-#define M_PI 3.14159265358979311600
-
-
 class COMPLEXNUMBER
 {
 public:
 	double re1;
 	double im1;
+
+	typedef struct {
+		double radius;
+		double phase;
+	} RADIUS_PHASE_DATA;
 
 	COMPLEXNUMBER(double re = 0.0, double im = 0.0)
 	{
@@ -87,18 +89,18 @@ public:
 			phase = 0;
 		}
 
-		if (!inRadians) {
-			
+		if (!inRadians)
+		{
+			phase = RADIAN_TO_DEGREE(phase);
 		}
 
 		return phase;
 	}
 
-	// TODO: continue with this
+	RADIUS_PHASE_DATA* getPolarForm(bool inRadians = true)
+	{
+		RADIUS_PHASE_DATA temp = { getRadius(), getPhase(inRadians) };
 
-
-
-
-
-
+		return &temp;
+	}
 };

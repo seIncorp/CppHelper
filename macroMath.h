@@ -1,6 +1,7 @@
-#include "complex_number.h"
+
 
 /*Factorial*/
+// TODO: recursive with function
 #define FACTORIAL(_n_) ({ \
 	int _res_ = 1; \
 	int _i_ = 2; \
@@ -89,6 +90,7 @@
 	_res_; \
 })
 
+// ??
 #define HARDYRAMANUJAN_MACRO(_n_) ({ \
 	int _res_ = log(log(_n_)); \
 	_res_; \
@@ -116,8 +118,10 @@
 	_res_; \
 })
 
+// TODO: https://github.com/trekhleb/javascript-algorithms/blob/master/src/algorithms/math/primality-test/trialDivision.js
 #define PRIMALITY_TEST_v2(_n_) ({})
 
+// TODO: recursive version
 #define EUCLIDEANALGORITHMITERATIVE(_oa_, _ob_) ({ \
 	int _res_ = 0; \
 	int _a_ = abs(_oa_); \
@@ -210,6 +214,7 @@
 	_res_;  \
 })
 
+// TODO: recursive version
 #define PASCAL_TRIANGLE(_n_,_arr_) ({ \
 	for(int _l_ = 0; _l_ < _n_; _l_++) \
 		for(int _i_ = 0; _i_ < _n_; _i_++) \
@@ -229,6 +234,74 @@
 	} \
 })
 
+#define DEGREE_TO_RADIAN(_degree_) ({ \
+	double _r_ = _degree_ * (M_PI / 180); \
+	_r_; \
+})
+
+#define RADIAN_TO_DEGREE(_radian_) ({ \
+	double _r_ = _radian_ * (180 / M_PI); \
+	_r_; \
+})
+
+// TODO: recursive style
+#define FAST_POWERING(_x_, _n_) ({ \
+	int _x1_ = _x_; \
+	int _n1_ = _n_; \
+	int _ret_ = 0; \
+	if( _n_ < 0 ) \
+	{ \
+		_x1_ = 1 / _x1_; \
+		_n1_ = -_n1_; \
+	} \
+	\
+	if( _n1_ == 0 ) \
+	{ \
+		_ret_ = 1; \
+	} \
+	else \
+	{ \
+		int _y_ = 1; \
+		while( _n1_ > 1 ) \
+		{ \
+			if( IS_EVEN(_n1_) == 1 ) \
+			{  \
+				_x1_ = _x1_ * _x1_; \
+				_n1_ = _n1_ / 2; \
+			} \
+			else \
+			{ \
+				_y_ = _x1_ * _y_; \
+				_x1_ = _x1_ * _x1_; \
+				_n1_ = ((_n1_ - 1) / 2); \
+			} \
+		} \
+		_ret_ = _x1_ * _y_; \
+	} \
+	_ret_; \
+})
+
+#define HORNER_METHOD(_coefficients_, _len_,_xVal_) ({ \
+	int *_arr_ = _coefficients_; \
+	int _res_ = 0; \
+	 \
+	for(int _a_ = 0; _a_ < _len_; _a_++) \
+	{ \
+		_res_ = _res_ * _xVal_ + (*(_arr_ + _a_)); \
+	} \
+	_res_; \
+})
+
+#define CLASSIC_POLYNOME(_coefficients_, _len_, _xVal_) ({ \
+	int *_arr_ = _coefficients_; \
+	int _res_ = 0; \
+	 \
+	for(int _a_ = 0; _a_ < (_len_); _a_++) \
+	{ \
+		_res_ = _res_ + (*(_arr_ + _a_)) * pow(_xVal_, (  (_len_-1) - _a_  )); \
+	} \
+	_res_; \
+})
 
 
 
@@ -245,6 +318,11 @@
 
 
 
+
+
+
+
+#include "complex_number.h"
 
 
 
