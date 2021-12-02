@@ -86,8 +86,14 @@ _**For examples see Examples.cpp.**_
 
 ### Sets:
 - COMBINATIONS (with and without repetitions) as recursion
+- fisherYates macro and function
+- Power set macro and function
+- OFFSET_3D_ARRAY_ONE_POINTER (calculate offset of 3D array used as only one pointer)
+- cartesian product
+- longest_common_subsequence
+- knap sack
+- longest increasing subsequence
 
-
-
-
+### Sorting:
+- merge sort
 
