@@ -1,4 +1,5 @@
-
+/* Bit Manipulation */
+#include "bitManipulation.h"
 
 /*Factorial*/
 // TODO: recursive with function
@@ -90,7 +91,7 @@
 	_res_; \
 })
 
-// ??
+
 #define HARDYRAMANUJAN_MACRO(_n_) ({ \
 	int _res_ = log(log(_n_)); \
 	_res_; \
@@ -118,8 +119,7 @@
 	_res_; \
 })
 
-// TODO: https://github.com/trekhleb/javascript-algorithms/blob/master/src/algorithms/math/primality-test/trialDivision.js
-#define PRIMALITY_TEST_v2(_n_) ({})
+
 
 // TODO: recursive version
 #define EUCLIDEANALGORITHMITERATIVE(_oa_, _ob_) ({ \

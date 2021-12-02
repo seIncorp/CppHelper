@@ -9,6 +9,7 @@
 #include <math.h>
 #include <functional>
 #include <cmath>
+#include <array>
 
 
 #define E "\n"
@@ -43,19 +44,9 @@
 
 
 /*Algorithms by Paradigm*/
+#include "macroSearches.h"
 
-/*Brute Force*/
 
-#define LINEAR_SEARCH(_x_, _len_, _v_) ({ \   
-int* _a_ = (_x_); \
-int _c_ = 0; \
-int _res_ = 0; \
-while (_c_ < (_len_)) \
-{ \
-if (*(_a_ + _c_) == _v_) {/*printf("%d ",*(a+c) );*/ _res_ = _c_; } _c_++; \
-} \
-_res_; \
-})
 
 
 /*Algorithms*/
@@ -66,30 +57,21 @@ _res_; \
 /* Sets */
 #include "macroSets.h"
 
+/* Sorting */
+#include "macroSorting.h"
+
+
 
 
 
 
 /*Data Structures*/
-
-/*Linked list*/
-#include "linkedlist.h"
-/* Doubly Linked List */
-#include "doublyLinkedList.h"
-/* Queue */
-#include "queue.h"
-/* Stack */
-#include "stack.h"
-/* Heap */
-#include "heap.h"
-/* Hash Table */
-#include "hashTable.h"
+#include "macroDataStructure.h"
 
 
 
-/* Bit Manipulation */
 
-#include "bitManipulation.h"
+
 
 
 #include "Examples.h"

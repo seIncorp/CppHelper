@@ -21,3 +21,7 @@ void hash_table_examples();
 
 void math_examples();
 
+void sets_examples();
+
+void sorts_examples();
+

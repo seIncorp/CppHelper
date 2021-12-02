@@ -32,8 +32,12 @@ void combinations_Without_Repetitions_subpart(int arr[], int temp[], int start, 
     }
 }
 
+
+
+
 void combinations_With_Repetitions(int n[], int len, int c_len)
 {
+    // {1,2,3}
     o << "[ ";
     for (int aa = 0; aa < len; aa++)
         o << n[aa] << " ";

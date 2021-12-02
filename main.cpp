@@ -3,6 +3,9 @@
 int main(int argc, char* av[])
 {
     /* EXAMPLES */
+    sets_examples();
+    sorts_examples();
+
     math_examples();
 
     factorial_examples();
