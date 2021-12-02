@@ -32,19 +32,7 @@ _**For examples see Examples.cpp.**_
 - HORNER_METHOD as macro
 - CLASSIC_POLYNOME as macro
 - COMPLEX NUMBER as macro
-- BIT MANIPULATION written in macro:
-    - print number in bits
-    - set bit to 1
-    - set bit to 0
-    - check for even number
-    - check if number is positive
-    - multiply number by two
-    - devide number by two
-    - switch sign of the number
-    - multiply two unsigned numbers
-    - count of all 1's in the number
-    - count of all different bits in two numbers
-    - bits length of the number
+- BIT MANIPULATION written in macro
 
 ### Shortcuts:
 - shortcuts for std::cout, cin, cerr, clog, endl, string
@@ -55,27 +43,7 @@ _**For examples see Examples.cpp.**_
 
 ### Data Structures
 - LINKED LIST written in macro and additional class functions:
-    - creating new linked list
-    - creating new node
-    - prepend node
-    - append node
-    - delete node
-    - find node
-    - creating new linked list from array
-    - delete head node
-    - delete tail node
-    - to string linked list
 - DOUBLY LINKED LIST written in macro and class functions:
-    - creating new doubly linked list
-    - creating new node
-    - prepend node
-    - append node
-    - delete node
-    - find node
-    - creating new linked list from array
-    - delete head node
-    - delete tail node
-    - to string linked list
 - HEAP (NOT FINISHED)
 - QUEUE written in macro and class functions
 - STACK written in macro and class functions
